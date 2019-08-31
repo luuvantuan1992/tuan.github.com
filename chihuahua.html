@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Good Doggos</title>
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    @font-face {
+        font-family: Yanone Kaffeesatz;
+        src: url('../fonts/YanoneKaffeesatz-Regular.eot');
+        src: local("Yanone Kaffeesatz"), url('../fonts/YanoneKaffeesatz-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: News Cycle;
+        src: url('../fonts/NewsCycle-Regular.eot');
+        src: local("News Cycle"), url('../fonts/NewsCycle-Regular.ttf');
+    }
+
+    html {
+        height: 100%;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    article,
+    aside,
+    figure,
+    footer,
+    header,
+    hgroup,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        font: normal .80em arial, sans-serif;
+        background: #eeeeee url(../images/pattern.png);
+        color: #444;
+    }
+
+    p {
+        padding: 0 0 20px 0;
+        line-height: 1.7em;
+    }
+
+    img {
+        border: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #362C20;
+        letter-spacing: 0em;
+        padding: 0 0 5px 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font: normal 140% arial, sans-serif;
+        margin: 0 0 15px 0;
+        padding: 15px 0 5px 0;
+        color: #222;
+    }
+
+    h2 {
+        font-size: 160%;
+        padding: 9px 0 5px 0;
+    }
+
+    h3 {
+        font-size: 140%;
+        padding: 5px 0 0 0;
+    }
+
+    h4,
+    h6 {
+        color: #00AAD5;
+        padding: 0 0 5px 0;
+        font: normal 160% 'News Cycle', arial, sans-serif;
+    }
+
+    h5,
+    h6 {
+        color: #555;
+        font: italic 95% arial, sans-serif;
+        letter-spacing: normal;
+        padding: 0 0 15px 0;
+    }
+
+    a,
+    a:hover {
+        outline: none;
+        text-decoration: underline;
+        color: #B30303;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    blockquote {
+        margin: 20px 0;
+        padding: 10px 20px 0 20px;
+        border: 1px solid #E5E5DB;
+        background: #FFF;
+    }
+
+    ul {
+        margin: 2px 0 22px 17px;
+    }
+
+    ul li {
+        list-style-type: circle;
+        margin: 0 0 6px 0;
+        padding: 0 0 4px 5px;
+        line-height: 1.5em;
+    }
+
+    ol {
+        margin: 8px 0 22px 20px;
+    }
+
+    ol li {
+        margin: 0 0 11px 0;
+    }
+
+    .left {
+        float: left;
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .right {
+        float: right;
+        width: auto;
+        margin-left: 10px;
+    }
+
+    .center {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    #main,
+    nav,
+    #container,
+    #logo,
+    #site_content,
+    footer {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #main {
+        margin: 5px auto;
+        width: 940px;
+        background: transparent;
+        padding-bottom: 30px;
+    }
+
+
+    header {
+        background: transparent;
+        height: 130px;
+    }
+
+    #logo {
+        width: 940px;
+        height: 130px;
+        background: transparent;
+        color: #888;
+        padding: 0;
+        float: left;
+    }
+
+    #logo h1,
+    #logo h2 {
+        font: normal 320% 'News Cycle', arial, sans-serif;
+        border-bottom: 0;
+        text-transform: none;
+        margin: 0;
+    }
+
+    #logo_text h1,
+    #logo_text h1 a,
+    #logo_text h1 a:hover {
+        padding: 0;
+        color: #444;
+        text-decoration: none;
+    }
+
+    #logo_text h1 a .logo_colour {
+        color: #B30303;
+    }
+
+    #logo_text a:hover .logo_colour {
+        color: #444;
+    }
+
+    #logo_text h2 {
+        font-size: 140%;
+        padding: 0 0 0 0;
+        color: #222;
+    }
+
+    nav {
+        height: 44px;
+        width: 940px;
+        float: right;
+        margin: -20px auto 0 auto;
+        color: #222;
+        background: #ddd;
+        /* Show a solid color for older browsers */
+        background: -moz-linear-gradient(#fff, #ddd);
+        background: -o-linear-gradient(#fff, #ddd);
+        background: -webkit-linear-gradient(#fff, #ddd);
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        border: 1px solid #eee;
+        border-radius: 7px 7px 7px 7px;
+        -moz-border-radius: 7px 7px 7px 7px;
+        -webkit-border: 7px 7px 7px 7px;
+    }
+
+    #site_content {
+        width: 940px;
+        overflow: hidden;
+        margin: 0px auto 0 auto;
+        padding: 15px 0 15px 0;
+    }
+
+    #sidebar_container {
+        float: right;
+        width: 224px;
+        margin: 25px 0 0 0;
+    }
+
+    .sidebar {
+        float: right;
+        width: 200px;
+        padding: 5px 20px;
+        margin: 0 0 17px 0;
+    }
+
+    .sidebar h3,
+    .content h1 {
+        padding: 0 15px 20px 0;
+        font: 230% 'News Cycle', arial, sans-serif;
+        text-shadow: #FFF 1px 1px;
+        margin: 0 1px;
+        color: #444;
+    }
+
+    .sidebar h3 {
+        color: #444;
+        font: 250% 'News Cycle', arial, sans-serif;
+        padding: 0 15px 5px 0;
+    }
+
+    .sidebar ul {
+        margin: 0 0 15px 0;
+    }
+
+    .sidebar li a,
+    .sidebar li a:hover {
+        color: #555;
+        text-decoration: none;
+    }
+
+    .sidebar li a:hover {
+        text-decoration: underline;
+    }
+
+    .sidebar_item,
+    .content_item {
+        padding: 15px 0;
+    }
+
+    .content {
+        text-align: left;
+        width: 670px;
+        margin: 25px 0 0 0;
+        float: left;
+        font-size: 120%;
+    }
+
+    .content ul {
+        margin: 2px 0 22px 0px;
+    }
+
+    .content ul li,
+    .sidebar ul li {
+        list-style-type: none;
+        background: url(../images/bullet.png) no-repeat;
+        margin: 0 0 0 0;
+        padding: 0 0 4px 28px;
+        line-height: 1.5em;
+    }
+
+    footer {
+        width: 950px;
+        font: 170% 'Yanone Kaffeesatz', arial, sans-serif;
+        height: 30px;
+        padding: 5px 0 20px 0;
+        text-align: center;
+        background: #ddd;
+        /* Show a solid color for older browsers */
+        background: -moz-linear-gradient(#fff, #ddd);
+        background: -o-linear-gradient(#fff, #ddd);
+        background: -webkit-linear-gradient(#fff, #ddd);
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        border: 1px solid #eee;
+        border-radius: 7px 7px 7px 7px;
+        -moz-border-radius: 7px 7px 7px 7px;
+        -webkit-border: 7px 7px 7px 7px;
+    }
+
+    footer p {
+        line-height: 1.7em;
+        padding: 0 0 10px 0;
+    }
+
+    footer a {
+        color: #222;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: #222;
+        text-shadow: none;
+        text-decoration: underline;
+    }
+
+    .form_settings {
+        margin: 15px 0 0 0;
+    }
+
+    .form_settings p {
+        padding: 0 0 4px 0;
+    }
+
+    .form_settings span {
+        float: left;
+        width: 200px;
+        text-align: left;
+    }
+
+    .form_settings input,
+    .form_settings textarea {
+        padding: 5px;
+        width: 299px;
+        font: 100% arial;
+        border: 1px solid #D5D5D5;
+        background: #FFF;
+        color: #47433F;
+        border-radius: 7px 7px 7px 7px;
+        -moz-border-radius: 7px 7px 7px 7px;
+        -webkit-border: 7px 7px 7px 7px;
+    }
+
+    .form_settings .submit {
+        font: 140% 'Yanone Kaffeesatz', arial, sans-serif;
+        border: 0;
+        width: 99px;
+        margin: 0 0 0 212px;
+        height: 33px;
+        padding: 2px 0 3px 0;
+        cursor: pointer;
+        background: #ddd;
+        /* Show a solid color for older browsers */
+        background: -moz-linear-gradient(#fff, #ddd);
+        background: -o-linear-gradient(#fff, #ddd);
+        background: -webkit-linear-gradient(#fff, #ddd);
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+        border: 1px solid #ddd;
+        border-radius: 7px 7px 7px 7px;
+        -moz-border-radius: 7px 7px 7px 7px;
+        -webkit-border: 7px 7px 7px 7px;
+        color: #222;
+        text-shadow: 1px 1px #FFF;
+    }
+
+    .form_settings textarea,
+    .form_settings select {
+        font: 100% arial;
+        width: 299px;
+    }
+
+    .form_settings select {
+        width: 310px;
+    }
+
+    .form_settings .checkbox {
+        margin: 4px 0;
+        padding: 0;
+        width: 14px;
+        border: 0;
+        background: none;
+    }
+
+    .separator {
+        width: 100%;
+        height: 0;
+        border-top: 1px solid #D9D5CF;
+        border-bottom: 1px solid #FFF;
+        margin: 0 0 20px 0;
+    }
+
+    table {
+        margin: 10px 0 30px 0;
+    }
+
+    table tr th,
+    table tr td {
+        background: #BBB;
+        color: #FFF;
+        padding: 7px 4px;
+        text-align: left;
+    }
+
+    table tr td {
+        background: #DDD;
+        color: #444;
+        border-top: 1px solid #FFF;
+    }
+
+    /* Image Transitions */
+    ul#images {
+        margin: 0 15px 10px 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    ul#images li {
+        display: block;
+        overflow: hidden;
+        padding: 0;
+        float: left;
+        width: 155px;
+        height: 300px;
+    }
+
+
+    html body ul.sf-menu ul,
+    html body ul.sf-menu ul li {
+        width: 200px;
+    }
+
+    html body ul.sf-menu ul ul {
+        margin: 0 0 0 200px;
+    }
+
+    ul.sf-menu,
+    ul.sf-menu * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.sf-menu {
+        display: block;
+        position: relative;
+    }
+
+    ul.sf-menu li {
+        display: block;
+        list-style: none;
+        float: left;
+        position: relative;
+    }
+
+    ul.sf-menu li:hover {
+        visibility: inherit;
+        /* fixes IE7 'sticky bug' */
+    }
+
+    ul.sf-menu a {
+        display: block;
+        position: relative;
+    }
+
+    ul.sf-menu ul {
+        position: absolute;
+        left: 0;
+        width: 150px;
+        top: auto;
+        left: -999999px;
+    }
+
+    ul.sf-menu ul a {
+        zoom: 1;
+        /* IE6/7 fix */
+    }
+
+    ul.sf-menu ul li {
+        float: left;
+        width: 150px;
+    }
+
+    ul.sf-menu ul ul {
+        top: 0;
+        margin: 0 0 0 150px;
+    }
+
+    ul.sf-menu li:hover ul,
+    ul.sf-menu li:focus ul,
+    ul.sf-menu li.sf-hover ul,
+    ul.sf-menu ul li:hover ul,
+    ul.sf-menu ul li:focus ul,
+    ul.sf-menu ul li.sf-hover ul,
+    ul.sf-menu ul ul li:hover ul,
+    ul.sf-menu ul ul li:focus ul,
+    ul.sf-menu ul ul li.sf-hover ul,
+    ul.sf-menu ul ul ul li:hover ul,
+    ul.sf-menu ul ul ul li:focus ul,
+    ul.sf-menu ul ul ul li.sf-hover ul {
+        left: auto;
+    }
+
+    ul.sf-menu li:hover ul ul,
+    ul.sf-menu li:focus ul ul,
+    ul.sf-menu li.sf-hover ul ul,
+    ul.sf-menu ul li:hover ul ul,
+    ul.sf-menu ul li:focus ul ul,
+    ul.sf-menu ul li.sf-hover ul ul,
+    ul.sf-menu ul ul li:hover ul ul,
+    ul.sf-menu ul ul li:focus ul ul,
+    ul.sf-menu ul ul li.sf-hover ul ul,
+    ul.sf-menu ul ul ul li:hover ul ul,
+    ul.sf-menu ul ul ul li:focus ul ul,
+    ul.sf-menu ul ul ul li.sf-hover ul ul {
+        left: -999999px;
+    }
+
+    /* autoArrows CSS */
+    span.sf-arrow {
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        display: block;
+        background: url(../images/arrows-black.png) no-repeat 0 0;
+        overflow: hidden;
+        
+        font-size: 1px;
+    }
+
+    ul ul span.sf-arrow {
+        right: 5px;
+        top: 20px;
+        background-position: 0 100%;
+    }
+
+    /* Theming the menu */
+    ul#nav {
+        float: left;
+    }
+
+    ul#nav ul {
+        background: #ddd;
+        margin-top: 5px;
+        padding-bottom: 15px;
+    }
+
+    ul#nav li a {
+        padding: 7px 25px 6px 25px;
+        font: 170% 'Yanone Kaffeesatz', arial, sans-serif;
+        text-shadow: 1px 1px #fff;
+        text-decoration: none;
+        color: #222;
+        margin-right: 2px;
+    }
+
+    ul#nav li a:hover,
+    ul#nav li a:focus,
+    ul#nav li.selected a,
+    ul#nav li.selected a:hover,
+    ul#nav li.selected a:focus {
+        color: #B30303;
+        text-shadow: none;
+    }
+
+    ul#nav ul li a {
+        color: #222;
+    }
+
+    ul#nav ul li a:hover {
+        color: #B30303;
+        margin-right: 2px;
+    }
+
+
+    ul#images {
+        margin: 0 15px 10px 0;
+        padding: 0;
+        position: relative;
+    }
+
+    ul#images li {
+        display: block;
+        overflow: hidden;
+        padding: 0;
+        float: left;
+        width: 155px;
+        height: 300px;
+        list-style: none;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+    #myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+</style>
+
+
+<body>
+    <div id="main">
+        <header>
+            <div id="logo">
+                <div id="logo_text">
+
+                    <h1><a href="http://127.0.0.1:5501/pratice/chomeo.html">Good<span class="logo_colour"> Doggos</span></a></h1>
+                    <h2>Trang web chó mèo</h2>
+
+                </div>
+            </div>
+            <nav>
+                <ul class="sf-menu" id="nav">
+                    <li class="selected"><a href="http://127.0.0.1:5501/pratice/chomeo.html">Home</a></li>
+                    <li><a href="http://127.0.0.1:5501/pratice/chocung.html">Chó Cưng</a>
+                    </li>
+                    <li><a href="http://127.0.0.1:5501/pratice/meocung.html">Mèo Cưng</a>
+                    </li>
+                    <li><a href="http://127.0.0.1:5501/pratice/thucan.html">Thức ăn</a></li>
+                    <li><a href="http://127.0.0.1:5501/pratice/chamsoc1.html"> Chăm sóc</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+                <li data-target="#demo" data-slide-to="5"></li>
+                
+            </ul>
+
+            <div class="carousel-inner ">
+                <div class="carousel-item active ">
+                        <a href="http://127.0.0.1:5501/pratice/meocung.html">
+                            <img src="http://123anhdep.net/wp-content/uploads/2016/03/bst-hinh-anh-thu-cung-xinh-xan-de-thuong-dang-yeu-nhat-khien-nguoi-xem-tan-chay-22.jpg" style="width: 1000px;height:500px" alt="Los Angeles">
+                    </a>
+                    </div>
+                
+                <div class="carousel-item">
+                        <a href="http://127.0.0.1:5501/pratice/meocung.html">
+                            <img src="http://bloghinhanh.com/wp-content/uploads/2015/01/Hinh-anh-meo-con-dang-yeu-nhat-4-620x388.jpg" style ="width:1000px;height:500px" alt="">
+                        </a>
+                        </div>
+                <div class="carousel-item">
+                        <a href="http://127.0.0.1:5501/pratice/chocung.html">
+                            <img src="http://1.bp.blogspot.com/-lN6MCgn7em8/UKHsk9kn3GI/AAAAAAAA7U8/DiuCzQ_6DMY/s1600/anh-cho-con+(8).jpg"style ="width: 1000px;height:500px;"
+                         alt="Los Angeles" width="1100" height="500"  >
+                        </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="http://127.0.0.1:5501/pratice/chocung.html">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Taka_Shiba.jpg/1200px-Taka_Shiba.jpg "style ="width: 1000px;height:500px;"
+                     alt="Los Angeles" width="1100" height="500"  >
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="http://127.0.0.1:5501/pratice/thucan.html">
+                        <img src=" https://peopledotcom.files.wordpress.com/2018/12/dog-food-recall.jpg?w=2000"style ="width: 1000px;height:500px;"
+                     alt="Los Angeles" width="1100" height="500"  >
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="http://127.0.0.1:5501/pratice/chamsoc.html">
+                        <img src="https://www.rd.com/wp-content/uploads/2016/04/47-vets-wont-tell-dog-bath-bubbles.jpg"style ="width: 1000px;height:500px;"
+                     alt="Los Angeles" width="1100" height="500"  >
+                    </a>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        </ul>
+
+        <div id="sidebar_container">
+                <div class="sidebar">
+                    <h3>News</h3>
+                    <h4>Chó husky vua chó tuyết vùng Taiga</h4>
+                    <h5>August 24th, 2019</h5>
+                    <p>Giống chó Husky Siberian (hay chó husky) là giống chó nổi tiếng nhất trên toàn thế giới. Chúng tạo cảm hứng cho rất nhiều nghệ sĩ, nhà văn, đạo diễn, thậm chí những nhà khoa học nổi tiếng.<br /><a href="http://127.0.0.1:5501/ch%C3%B3/husky.html">Read more</a></p>
+                    <h4>Mèo Ba Tư mặt tịt siêu đáng yêu</h4>
+                    <h5>August 24th, 2019</h5>
+                    <p>Mèo Ba Tư (còn gọi là mèo Persian) là một giống mèo cảnh có nguồn gốc từ Ba Tư. Chúng hiện được rất nhiều người yêu thích và săn lùng. Cùng tìm hiểu về loài mèo thú vị này trong bài viết dưới đây.
+    
+                            <br /><a href="http://127.0.0.1:5501/m%C3%A8o/batu.html">Read more</a></p>
+                </div>
+                </div
+           
+<article>
+<h4>Chó chihuahua-Những đặc điểm thú vị của chó chihuahua</h4>
+<p>Trở thành biểu tượng văn hóa nhạc Pop vào năm 1997, Chihuahua là giống chó thu hút hàng triệu người mỗi khi xuất hiện trong quảng cáo của hãng Taco Bell. Từ đó đến nay, chó Chihuahua trở nên phổ biến và nổi tiếng nhất nước Mỹ. Sở hữu thân hình nhỏ nhắn, đáng yêu khiến ai cũng thích thú khi nhìn thấy Chihuahua.</p>
+<img src="https://chibi.info/wp-content/uploads/2017/09/cho-chihuahua.jpg" alt=""style ="width :700px; height :400px">
+<h2>Chó Chihuahua là giống chó nhỏ nhất thế giới
+</h2>
+<p>Với cân nặng 0,5kg khi sinh ra, chó Chihuahua đã được Hội nuôi chó Hoa Kỳ công nhận là giống chó nhỏ nhất thế giới. Khi trưởng thành, Chihuahua chỉ nặng khoảng 3,5kg, cao 23cm mà thôi. Ngay từ khi mới xuất hiện, chó Chihuahua nổi bật với cơ thể nhỏ bé nên rất phù hợp với những ai muốn nuôi một chú chó đáng yêu, nhỏ nhắn.</p>
+<h2>Là giống chó lâu đời nhất ở Bắc Mỹ
+</h2>
+<p>Chó Chihuahua tổ tiến là Techichi đây là loài chó mang ý nghĩa quan trọng của nền văn hóa Maya. Theo nghiên cứu, giống chó này có diện mạo từ Trung Quốc nhưng không biết được nguồn gốc của chúng đến từ đâu. Đến năm 1904, Chihuahua mới được Hội nuôi chó Hoa Kỳ (AKC) công nhận.
+
+</p>
+<img src="https://chibi.info/wp-content/uploads/2017/09/giong-cho-Chihuahua.jpg" alt=""style ="width :700px; height :400px">
+<h2>Chihuahua là giống chó rất thông minh
+</h2>
+<p>Mặc dù kích thước của chúng nhỏ nhắn nhất thế giới những bộ não của chúng là ngược lại hoàn toàn, hơn hẳn các giống chó khác. Xét về bộ nào với thân hình thì phần chóp của Chihuahua gần giống như trẻ sơ sinh, thóp mềm, thậm chí là quá mềm. Tuy nhỏ nhắn nhưng chúng lại rất thông minh, láu lỉnh vì thế Chihuahua được rất nhiều người yêu thích.
+
+</p>
+<h2>Chihuahua thuần chủng đa dạng về các màu lông
+</h2>
+<p>Chihuahua là giống chó đặc biệt, chúng không có tiêu chuẩn về màu sắc nên khi xét về giống chó Chihuahua thuần chủng thì không có bất kì tiêu chuẩn nào. Lông của chúng có thể dài, ngắn khác nhau, mềm mượt, xù xì màu lông đa dạng từ sáng đến trầm tối đều được mọi người công nhận. Vì thế, Chihuahua lúc nào cũng đa dạng về màu sắc và bạn có thể chọn một chú cún con Chihuahua màu sắc mà mình yêu thích.
+
+</p>
+
+<h2>Chihuahua là giống chó linh thiêng được nhiều người tôn thờ
+</h2>
+<p>Có một điều mà không phải ai cũng biết, giống chó Chihuahua được người Maya tôn thờ, ca ngợi hết lời. Tuy nhiên, theo quy định của hai bộ tốc Toltecs và Aztecs thì Chihuahua không được thờ cúng nhưng chúng trở thành vật nuôi không thể thiếu trong nền văn hóa tín ngưỡng của họ. Theo quan niệm của hai bộ tộc này thì chó Chihuahua mang một linh hồn chủ nhân đi qua âm phủ. Tức là khi qua đời chúng sẽ đợi chủ nhận của mình ở thế giới bên kia. Tính trung thành, sẵn sàng hi sinh vì chủ đã giúp chúng trở thành giống chó được yêu thích nhất thế giới. Điều đáng nói là những chú chó Chihuahua màu đỏ được xem là con vật gánh mọi tội lỗi cho chủ nhân của chúng.
+
+</p>
+</article>
+</script>
+
+</body>
+
+</html>
